@@ -11,6 +11,11 @@ const routes: Routes = [{
   component: PagesComponent,
   children: [
     {
+      path: 'file',
+      loadChildren: () => import('./file/file.module')
+        .then(m => m.FileModule),
+    },
+    {
       path: 'dashboard',
       component: ECommerceComponent,
     },
